@@ -184,8 +184,8 @@ function enemyAction() {
   /*
       TO-DO: Calculate the opponent’s HP ratio (current HP / 100).
              Use it along with a random roll to choose an action:
-             - If HP is low (< 35%) and roll < 0.55 → Heal and display the amount healed in the messageBox.
-             - Else if roll < 0.5 → Use ability and display the amount dealt/healed in the messageBox.
+             - If HP is low (< 35%) and roll < 55% → Heal and display the amount healed in the messageBox.
+             - Else if roll < 50% → Use ability and display the amount dealt/healed in the messageBox.
              - Otherwise → Use basic attack and display the amount damaged in the messageBox.
 
              After performing the action:
