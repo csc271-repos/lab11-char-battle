@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Character Builder -> Battle</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+
+    <body>
+        <!-- HEADER SECTION -->
+        <header id="header">
+            <h1>Character Builder</h1>
+            <p class="subtitle">Create two characters. Preview updates live. Hit <strong>Start Battle</strong> to fight.</p>
+        </header>
+
+        <!-- CHARACTER BUILDER SECTION -->
+        <section id="builder-section">
+            <form id="char-form" autocomplete="off">
+                <div class="form-grid">
+
+                    <!-- CHARACTER 1 FORM -->
+                    <div class="char-column">
+                        <h2>Character 1</h2>
+                        <label>Name</label>
+                        <input id="c1Name" type="text" placeholder="Name">
+
+                        <label>Level</label>
+                        <input id="c1Level" type="number" min="1" value="1">
+
+                        <label>HP</label>
+                        <input id="c1HP" type="number" min="1" max="100" value="100">
+
+                        <label>Ability</label>
+                        <select id="c1Ability">
+                            <option value="Power Strike">Power Strike</option>
+                            <option value="Quick Shot">Quick Shot</option>
+                            <option value="Mega Heal">Mega Heal</option>
+                            <option value="Arcane Burst">Arcane Burst</option>
+                        </select>
+
+                        <label>Image URL</label>
+                        <input id="c1Img" type="text" placeholder="https://...">
+                    </div>
+
+                    <!-- CHARACTER 2 FORM -->
+                    <div class="char-column">
+                        <h2>Character 2</h2>
+                        <label>Name</label>
+                        <input id="c2Name" type="text" placeholder="Name">
+
+                        <label>Level</label>
+                        <input id="c2Level" type="number" min="1" value="1">
+
+                        <label>HP</label>
+                        <input id="c2HP" type="number" min="1" max="100" value="100">
+
+                        <label>Ability</label>
+                        <select id="c2Ability">
+                            <option value="Power Strike">Power Strike</option>
+                            <option value="Quick Shot">Quick Shot</option>
+                            <option value="Mega Heal">Mega Heal</option>
+                            <option value="Arcane Burst">Arcane Burst</option>
+                        </select>
+
+                        <label>Image URL</label>
+                        <input id="c2Img" type="text" placeholder="https://...">
+                    </div>
+                </div>
+
+
+                <!-- LIVE PREVIEW -->
+                <h3 class="preview-title">Live Preview</h3>
+                <div id="preview-container">
+
+                    <!-- CHARACTER 1 PREVIEW -->
+                    <div class="preview-card" id="preview1">
+                        <img id="prev1Img" class="preview-img" src="" alt="">
+                        <div class="preview-meta">
+                            <div class="preview-name" id="prev1Name">Name</div>
+                            <div class="preview-level">Lv. <span id="prev1Level">1</span></div>
+                        </div>
+                        <div class="hp-outer">
+                            <div class="hp-inner" id="prev1HP" style="width:100%;"></div>
+                        </div>
+                        <div class="preview-ability" id="prev1Ability">Ability</div>
+                    </div>
+
+                    <!-- CHARACTER 2 PREVIEW -->
+                    <div class="preview-card" id="preview2">
+                        <img id="prev2Img" class="preview-img" src="" alt="">
+                        <div class="preview-meta">
+                            <div class="preview-name" id="prev2Name">Name</div>
+                            <div class="preview-level">Lv. <span id="prev2Level">1</span></div>
+                        </div>
+                        <div class="hp-outer">
+                            <div class="hp-inner" id="prev2HP" style="width:100%;"></div>
+                        </div>
+                        <div class="preview-ability" id="prev2Ability">Ability</div>
+                    </div>
+                </div>
+
+                <!-- BATTLE BUTTON (form submit) -->
+                <div class="form-actions">
+                    <button id="startBattleBtn" type="submit">Start Battle</button>
+                </div>
+            </form>
+        </section>
+
+
+
+        <!-- BATTLE SECTION (hidden until start) -->
+        <section id="battle-section" class="hidden">
+            <div id="battle-screen">
+
+                <!-- CHARACTER 2 BATTLE CARD -->
+                <div class="opponent-area">
+                    <div class="info-box">
+                        <div class="name-level">
+                            <span id="oppName">Opponent</span>
+                            <span class="level">Lv. <span id="oppLevel">1</span></span>
+                        </div>
+                        <div class="hp-label">HP</div>
+                        <div class="hp-bar">
+                            <div id="oppHP" class="hp-fill"></div>
+                        </div>
+                    </div>
+                    <img id="oppImg" class="sprite opponent" src="" alt="">
+                </div>
+
+                <!-- CHARACTER 1 BATTLE CARD -->
+                <div class="player-area">
+                    <img id="playerImg" class="sprite player" src="" alt="">
+                    <div class="info-box">
+                        <div class="name-level">
+                            <span id="playerName">Player</span>
+                            <span class="level">Lv. <span id="playerLevel">1</span></span>
+                        </div>
+                        <div class="hp-label">HP</div>
+                        <div class="hp-bar">
+                            <div id="playerHP" class="hp-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MENU BUTTONS (fight, ability, heal, run) -->
+                <div class="menu-box">
+                    <button class="menu-btn" id="fightBtn">FIGHT</button>
+                    <button class="menu-btn" id="abilityBtn">ABILITY</button>
+                    <button class="menu-btn" id="healBtn">HEAL</button>
+                    <button class="menu-btn" id="runBtn">RUN</button>
+                </div>
+
+                <!-- BATTLE STORY BOX -->
+                <div id="messageBox" class="message">Battle ready.</div>
+
+            </div>
+        </section>
+
+        <!-- JS SCRIPTS -->
+        <script src="js/elements.js"></script>
+        <script src="js/preview.js"></script>
+        <script src="js/char.js"></script>
+        <script src="js/battle.js"></script>
+    </body>
+</html>
